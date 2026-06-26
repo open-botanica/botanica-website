@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Species Search</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #06120c;
+      color: #e8f5ec;
+      line-height: 1.6;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      background:
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.18), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(132, 204, 22, 0.12), transparent 30%);
+    }
+
+    .hero {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 6px 12px;
+      border: 1px solid #22c55e;
+      border-radius: 999px;
+      color: #86efac;
+      background: rgba(34, 197, 94, 0.12);
+      font-size: 14px;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: #4ade80;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      color: #b7c9bd;
+      font-size: 20px;
+      margin-bottom: 32px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #22c55e;
+      color: #041108;
+    }
+
+    .btn-primary:hover {
+      background: #16a34a;
+    }
+
+    .btn-secondary {
+      color: #dcfce7;
+      border: 1px solid #21452f;
+    }
+
+    .btn-secondary:hover {
+      border-color: #4ade80;
+    }
+
+    .features {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: #a7b8ad;
+      font-size: 15px;
+    }
+
+    .features span {
+      padding: 8px 12px;
+      border: 1px solid #173322;
+      border-radius: 10px;
+      background: rgba(7, 24, 14, 0.75);
+    }
+
+    .search-card {
+      background: #f7fbf8;
+      color: #0f1f14;
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: 0 30px 80px rgba(34, 197, 94, 0.18);
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid #dcebe1;
+      border-radius: 16px;
+      background: white;
+      margin-bottom: 22px;
+    }
+
+    .search-icon {
+      font-size: 22px;
+    }
+
+    .search-box span:last-child {
+      color: #64746a;
+    }
+
+    .plant-result {
+      padding: 18px;
+      border: 1px solid #dcebe1;
+      border-radius: 18px;
+      margin-bottom: 14px;
+      background: #ffffff;
+    }
+
+    .plant-result h2 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .plant-result .latin {
+      color: #16a34a;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .plant-result p {
+      color: #64746a;
+      font-size: 15px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .tags span {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .search-card {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <div class="badge">Global Plant Database</div>
+
+        <h1>
+          Search every plant species on <span>Earth.</span>
+        </h1>
+
+        <p class="subtitle">
+          Discover, identify, and explore known plant species with a fast search
+          engine built for gardeners, researchers, students, and nature lovers.
+        </p>
+
+        <div class="actions">
+          <a href="#" class="btn btn-primary">Start Searching</a>
+          <a href="#" class="btn btn-secondary">Explore Species</a>
+        </div>
+
+        <div class="features">
+          <span>Scientific names</span>
+          <span>Plant families</span>
+          <span>Habitats</span>
+          <span>Care data</span>
+        </div>
+      </div>
+
+      <div class="search-card">
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <span>Search “olive tree”, “monstera”, “quercus”…</span>
+        </div>
+
+        <div class="plant-result">
+          <h2>Common Oak</h2>
+          <div class="latin">Quercus robur</div>
+          <p>
+            A large deciduous tree native to Europe, known for its broad crown,
+            lobed leaves, and ecological importance.
+          </p>
+          <div class="tags">
+            <span>Tree</span>
+            <span>Fagaceae</span>
+            <span>Europe</span>
+          </div>
+        </div>
+
+        <div class="plant-result">
+          <h2>Monstera</h2>
+          <div class="latin">Monstera deliciosa</div>
+          <p>
+            A tropical climbing plant recognized for its large split leaves and
+            popularity as an indoor plant.
+          </p>
+          <div class="tags">
+            <span>Tropical</span>
+            <span>Indoor</span>
+            <span>Araceae</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+<script src="script.js" defer></script>
+</body>
+</html>
